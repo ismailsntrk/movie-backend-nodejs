@@ -196,7 +196,7 @@ exports.signin = (req, res) => {
        httpOnly: true,
        secure:false,
        domain:"ubiquitous-chebakia-add3da.netlify.app"
-    });
+    });}}
 
   //  res.cookie("access_token", token, { httpOnly: true, sameSite: none , secure:false });
   //  res
