@@ -193,9 +193,10 @@ exports.signin = (req, res) => {
     const { _id, name, email, role } = req.user;
     const token = signToken(_id);
          res.cookie("access_token", token, {
-       httpOnly: false,
-       secure:false,
-       domain:"ubiquitous-chebakia-add3da.netlify.app"
+      
+       secure:true,
+       sameSite:none,
+     
     });}}
 
   //  res.cookie("access_token", token, { httpOnly: true, sameSite: none , secure:false });
