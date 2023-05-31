@@ -195,15 +195,15 @@ exports.signin = (req, res) => {
          res.cookie("access_token", token, {
        httpOnly: true,
        secure:false,
-       domain:".https://ubiquitous-chebakia-add3da.netlify.app"
-     });
+       domain:"ubiquitous-chebakia-add3da.netlify.app"
+    });
 
-   // res.cookie("access_token", token, { httpOnly: true, sameSite: true });
-    res
-      .status(200)
-      .json({ isAuthenticated: true, user: { name, email, role } });
-  }
-};
+  //  res.cookie("access_token", token, { httpOnly: true, sameSite: none , secure:false });
+  //  res
+  //    .status(200)
+  //    .json({ isAuthenticated: true, user: { name, email, role } });
+ // }
+//};
 
 exports.logout = (req, res) => {
   res.clearCookie("access_token");
