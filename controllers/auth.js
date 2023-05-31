@@ -192,25 +192,12 @@ exports.signin = (req, res) => {
   if (req.isAuthenticated()) {
     const { _id, name, email, role } = req.user;
     const token = signToken(_id);
-         res.cookie("access_token", token, {
-       httpOnly: true,
-       secure:false,
-            sameSite:"none",
-       domain:"ubiquitous-chebakia-add3da.netlify.app"
-    });
-
-  //  res.cookie("access_token", token, { httpOnly: true, sameSite: none , secure:false });
+    res.cookie("access_token", token, { httpOnly: true, sameSite: none });
     res
-     .status(200)
-     .json({ isAuthenticated: true, user: { name, email, role } });
+      .status(200)
+      .json({ isAuthenticated: true, user: { name, email, role } });
   }
 };
-  //  res.cookie("access_token", token, { httpOnly: true, sameSite: none , secure:false });
-  //  res
-  //    .status(200)
-  //    .json({ isAuthenticated: true, user: { name, email, role } });
- // }
-//};
 
 exports.logout = (req, res) => {
   res.clearCookie("access_token");
