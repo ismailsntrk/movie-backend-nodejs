@@ -195,7 +195,7 @@ exports.signin = (req, res) => {
          res.cookie("access_token", token, {
        httpOnly: true,
        secure:false,
-            sameSite:none,
+            sameSite:"none",
        domain:"ubiquitous-chebakia-add3da.netlify.app"
     });
 
